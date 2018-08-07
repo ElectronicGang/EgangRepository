@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BorrowBookControl {
-	#Dilan Kalpa
+	
 	private BorrowBookUI ui;
 	
 	private library L;
