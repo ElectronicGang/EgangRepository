@@ -44,17 +44,17 @@ public class Book implements Serializable { // class name changed from "book" to
 
 
 
-	public boolean setAvailable() {
+	public boolean setAvailable() {  // method name Available chaged to setAvailable
 		return state == STATE.AVAILABLE;
 	}
 
 
-	public boolean On_loan() {
+	public boolean setOnLoan() {  // method name On_loan chaged to setOnLoan
 		return state == STATE.ON_LOAN;
 	}
 
 
-	public boolean Damaged() {
+	public boolean setDamaged() {  // method name Damaged chaged to setDamaged
 		return state == STATE.DAMAGED;
 	}
 
