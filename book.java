@@ -22,27 +22,29 @@ public class Book implements Serializable { // class name changed from "book" to
 	}
 
 	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("Book: ").append(ID).append("\n")
+		StringBuilder bookDetails = new StringBuilder(); // variable name sb changed to bookDetails
+		bookDetails.append("Book: ").append(ID).append("\n")
 		  .append("  Title:  ").append(T).append("\n")
 		  .append("  Author: ").append(A).append("\n")
 		  .append("  CallNo: ").append(C).append("\n")
-		  .append("  State:  ").append(state);
+		  .append("  State:  ").append(state);  
+		// variable sb changed to bookDetails
+		// variables ID,T, A, C changed changed to sequently id, title, auther, callNo
 
-		return sb.toString();
+		return bookDetails.toString(); // variable sb changed to bookDetails
 	}
 
-	public Integer ID() {
-		return ID;
+	public Integer getId() { // method name ID changed to getId and return type Integer changed to int
+		return this.id; // variable ID changed to this.id
 	}
 
-	public String Title() {
-		return T;
+	public String getTitle() {  // method name Title changed to getTitle
+		return this.title;  // variable T changed to this.title
 	}
 
 
 
-	public boolean Available() {
+	public boolean setAvailable() {
 		return state == STATE.AVAILABLE;
 	}
 
