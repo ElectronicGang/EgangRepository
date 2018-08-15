@@ -4,20 +4,20 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class Book implements Serializable { // class name changed from "book" to "Book"
 
-	private String T;
-	private String A;
-	private String C;
-	private int ID;
+	private String title;  // variable name cahanged from T to title
+	private String author; // variable name cahanged from A to author 
+	private String callNo;  // variable name cahanged from C to callNo
+	private int id;  // variable name cahanged from ID to id
 
 	private enum STATE { AVAILABLE, ON_LOAN, DAMAGED, RESERVED };
 	private STATE state;
 
 
 	public book(String author, String title, String callNo, int id) {
-		this.A = author;
-		this.T = title;
-		this.C = callNo;
-		this.ID = id;
+		this.author = author;  // left side variable A change to author
+		this.T = title;  // left side variable T change to title
+		this.C = callNo;  // left side variable C change to callNo
+		this.ID = id;  // left side variable ID change to id
 		this.state = STATE.AVAILABLE;
 	}
 
