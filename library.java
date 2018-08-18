@@ -108,17 +108,17 @@ public class Library implements Serializable {  // change class name from librar
 	}
 
 	
-	public List<member> Members() {		
+	public List<member> getMembers() {  // change method name from Members to getMembers	
 		return new ArrayList<member>(members.values()); 
 	}
 
 
-	public List<Book> Books() { // changed object type from book to Book			
+	public List<Book> getBooks() { // changed object type from book to Book, change method name from Books to getBooks		
 		return new ArrayList<book>(catalog.values()); 
 	}
 
 
-	public List<loan> CurrentLoans() {
+	public List<loan> getCurrentLoans() {  // change method name from CurrentLoans to getCurrentLoans	
 		return new ArrayList<loan>(currentLoans.values());
 	}
 
@@ -130,10 +130,11 @@ public class Library implements Serializable {  // change class name from librar
 	}
 
 	
-	public Book Add_book(String a, String t, String c) {  	// changed return type from book to Book		
-		Book b = new Book(a, t, c, getNextBookId());   // changed method from nextBID to getNextBookId, changed object type from book to Book
-		catalog.put(b.ID(), b);		
-		return b;
+	public Book addBook(String author, String title, String callNo) {	// changed return type from book to Book, change method name from Add_book to addBook, changed parameters a, t, c to author, title, callNo	
+		// changed object name b to book
+		Book book = new Book(author, title, callNo, getNextBookId());   // changed method from nextBID to getNextBookId, changed object type from book to Book, changed arguments from a, t, c to author, title, callNo		
+		catalog.put(book.ID(), book);	// changed object b to book	
+		return book;	// changed object b to book
 	}
 
 	
@@ -151,7 +152,7 @@ public class Library implements Serializable {  // change class name from librar
 	}
 
 	
-	public int loanLimit() {
+	public int getLoanLimit() {  // changed loanLimit to getLoanLimit
 		return LOAN_LIMIT;
 	}
 
