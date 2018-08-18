@@ -11,9 +11,10 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import ppt.assignment.pkg2.Book;  // import reference of Book class
 
 @SuppressWarnings("serial")
-public class library implements Serializable {
+public class Library implements Serializable {  // change class name from library to Library
 	
 	private static final String LIBRARY_FILE = "library.obj";
 	private static final int LOAN_LIMIT = 2;
@@ -22,20 +23,20 @@ public class library implements Serializable {
 	private static final double MAX_FINES_OWED = 5.0;
 	private static final double DAMAGE_FEE = 2.0;
 	
-	private static library self;
+	private static Library self; // changed library to Library
 	private int BID;
 	private int MID;
 	private int LID;
 	private Date loadDate;
 	
-	private Map<Integer, book> catalog;
+	private Map<Integer, book> catalog; // change object type book to Book
 	private Map<Integer, member> members;
 	private Map<Integer, loan> loans;
 	private Map<Integer, loan> currentLoans;
-	private Map<Integer, book> damagedBooks;
+	private Map<Integer, book> damagedBooks; // change object type book to Book
 	
 
-	private library() {
+	private Library() {  // change constucter name from librabry to Library
 		catalog = new HashMap<>();
 		members = new HashMap<>();
 		loans = new HashMap<>();
