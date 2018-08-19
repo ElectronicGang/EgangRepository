@@ -18,7 +18,7 @@ public class ReturnBookUI {
 	}
 
 
-	public void run() {		
+	public void runReturnBook() {	// changed method name from run to runReturnBook			
 		output("Return Book Use Case UI\n");
 		
 		while (true) {
