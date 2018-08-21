@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class FixBookUI {
+public class FixBookUi {
 
 	public static enum UI_STATE { INITIALISED, READY, FIXING, COMPLETED };
 
@@ -10,11 +10,11 @@ public class FixBookUI {
 	private UI_STATE state;
 
 	
-	public FixBookUI(FixBookControl control) {
+	public FixBookUi(FixBookControl control) {
 		this.control = control;
 		input = new Scanner(System.in);
 		state = UI_STATE.INITIALISED;
-		control.setUI(this);
+		control.setUi(this);
 	}
 
 
@@ -31,25 +31,25 @@ public class FixBookUI {
 			switch (state) {
 			
 			case READY:
-				String bookStr = input("Scan Book (<enter> completes): ");
-				if (bookStr.length() == 0) {
-					control.scanningComplete();
+				String bookString = input("Scan Book (<enter> completes): ");// This String variable name was "bookStr" before re-named.
+				if (bookString.length() == 0) {
+                                    control.scanningComplete();//Text alignment one tab moved left.
 				}
 				else {
-					try {
-						int bookId = Integer.valueOf(bookStr).intValue();
-						control.bookScanned(bookId);
-					}
-					catch (NumberFormatException e) {
-						output("Invalid bookId");
-					}
+                                    try {
+                                        int bookId = Integer.valueOf(bookString).intValue();
+                                        control.bookScanned(bookId);
+                                    }
+                                    catch (NumberFormatException e) {
+					output("Invalid bookId");
+                                    }
 				}
-				break;	
+				break;		
 				
 			case FIXING:
-				String ans = input("Fix Book? (Y/N) : ");
+				String answer = input("Fix Book? (Y/N) : "); // This String variable name was "ans" before re-named.
 				boolean fix = false;
-				if (ans.toUpperCase().equals("Y")) {
+				if (answer.toUpperCase().equals("Y")) {
 					fix = true;
 				}
 				control.fixBook(fix);
