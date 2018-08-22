@@ -44,22 +44,22 @@ public class Book implements Serializable { // class name changed from "book" to
 
 
 
-	public boolean setAvailable() {
+	public boolean setAvailable() {  // method name Available chaged to setAvailable
 		return state == STATE.AVAILABLE;
 	}
 
 
-	public boolean On_loan() {
+	public boolean setOnLoan() {  // method name On_loan chaged to setOnLoan
 		return state == STATE.ON_LOAN;
 	}
 
 
-	public boolean Damaged() {
+	public boolean setDamaged() {  // method name Damaged chaged to setDamaged
 		return state == STATE.DAMAGED;
 	}
 
 
-	public void Borrow() {
+	public void borrowBook() {  // changed method name from Borrow to borrowBook
 		if (state.equals(STATE.AVAILABLE)) {
 			state = STATE.ON_LOAN;
 		}
@@ -70,7 +70,7 @@ public class Book implements Serializable { // class name changed from "book" to
 	}
 
 
-	public void Return(boolean DAMAGED) {
+	public void returnBook(boolean DAMAGED) {  // changed method name from Return to returnBook
 		if (state.equals(STATE.ON_LOAN)) {
 			if (DAMAGED) {
 				state = STATE.DAMAGED;
@@ -85,7 +85,7 @@ public class Book implements Serializable { // class name changed from "book" to
 	}
 
 
-	public void Repair() {
+	public void repairBook() {  // changed method name from Repair to repairBook
 		if (state.equals(STATE.DAMAGED)) {
 			state = STATE.AVAILABLE;
 		}
