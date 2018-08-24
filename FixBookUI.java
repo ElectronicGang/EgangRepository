@@ -31,13 +31,13 @@ public class FixBookUi {
 			switch (state) {
 			
 			case READY:
-				String bookString = input("Scan Book (<enter> completes): ");// This String variable name was "bookStr" before re-named.
-				if (bookString.length() == 0) {
+				String bookString = input("Scan Book (<enter> completes): ");// String variable name "bookStr" was re-named as "bookString".
+				if (bookString.length() == 0) {// String variable name "bookStr" was re-named as "bookString".
                                     control.scanningComplete();//Text alignment one tab moved left.
 				}
 				else {
                                     try {
-                                        int bookId = Integer.valueOf(bookString).intValue();
+                                        int bookId = Integer.valueOf(bookString).intValue();// String variable name "bookStr" was re-named as "bookString".
                                         control.bookScanned(bookId);
                                     }
                                     catch (NumberFormatException e) {
