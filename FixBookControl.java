@@ -5,8 +5,8 @@ public class FixBookControl {
 	private enum CONTROL_STATE { INITIALISED, READY, FIXING };
 	private CONTROL_STATE state;
 	
-	private Library library; // This object class name was "library" before it re-named.
-	private Book currentBook; // This object class name was "book" before it re-named.
+	private Library library; // This object class name was "library" before it re-named to "Library".
+	private Book currentBook; // This object class name was "book" before it re-named to "Book".
 
 
 	public FixBookControl() {
@@ -37,7 +37,7 @@ public class FixBookControl {
 			userInterface.display("Invalid bookId");
 			return;
 		}
-		if (!currentBook.damaged()) { //method name "damaged" was re-named as "damaged"
+		if (!currentBook.damaged()) { //method name "Damaged" was re-named as "damaged"
 			userInterface.display("\"Book has not been damaged");
 			return;
 		}
