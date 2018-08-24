@@ -34,7 +34,7 @@ public class BorrowBookControl {
         state = CONTROL_STATE.READY;
     }
 
-    public void swipeMember(int memberId) {  //  changed the word "Swiped" to "swipeMember"
+    public void swipeMemberCard(int memberId) {  //  changed the word "Swiped" to "swipeMemberCard"
         if (!state.equals(CONTROL_STATE.READY)) {
             throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
         }
@@ -74,7 +74,7 @@ public class BorrowBookControl {
         }
         if (library.loansRemainingForMember(member) - PENDING.size() == 0) {
             ui.display("Loan limit reached");
-            Complete();
+            completeBorrowBook(); // change 'Complete' to completeBorrowBook
         }
     }
 
