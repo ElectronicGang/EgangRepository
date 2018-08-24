@@ -13,7 +13,7 @@ public class Book implements Serializable { // class name changed from "book" to
 	private STATE state;
 
 
-	public book(String author, String title, String callNo, int id) {
+	public Book(String author, String title, String callNo, int id) { // changed constructer name from book to Book
 		this.author = author;  // left side variable A change to author
 		this.T = title;  // left side variable T change to title
 		this.C = callNo;  // left side variable C change to callNo
