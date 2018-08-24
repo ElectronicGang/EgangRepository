@@ -34,7 +34,7 @@ public class BorrowBookControl {
         state = CONTROL_STATE.READY;
     }
 
-    public void Swiped(int memberId) {
+    public void swipeMember(int memberId) {  //  changed the word "Swiped" to "swipeMember"
         if (!state.equals(CONTROL_STATE.READY)) {
             throw new RuntimeException("BorrowBookControl: cannot call cardSwiped except in READY state");
         }
@@ -54,7 +54,7 @@ public class BorrowBookControl {
         }
     }
 
-    public void Scanned(int bookId) {
+    public void scannedBook(int bookId) { // //  changed the word "Scanned" to "scannedBook"
         book = null;                //instead of word book, the letter 'B' was used before
         if (!state.equals(CONTROL_STATE.SCANNING)) {
             throw new RuntimeException("BorrowBookControl: cannot call bookScanned except in SCANNING state");
@@ -78,7 +78,7 @@ public class BorrowBookControl {
         }
     }
 
-    public void Complete() {
+    public void completeBorrowBook() { //changed the word "Complete" to "completeBorrowBook"
         if (PENDING.size() == 0) {
             cancel();
         } else {

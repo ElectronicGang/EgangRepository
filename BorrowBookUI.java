@@ -50,7 +50,7 @@ public class BorrowBookUi { //class changed to BorrowBookUi from BorrowBookUI
                     }
                     try {
                         int memberId = Integer.valueOf(memStr).intValue();
-                        control.Swiped(memberId);
+                        control.swipeMemberCard(memberId);          // Change the method name to 'swipeMemberCard' from "Swiped" in BorrowBookControl Class
                     } catch (NumberFormatException e) {
                         output("Invalid Member Id");
                     }
@@ -64,7 +64,7 @@ public class BorrowBookUi { //class changed to BorrowBookUi from BorrowBookUI
                 case SCANNING:
                     String bookStr = input("Scan Book (<enter> completes): ");
                     if (bookStr.length() == 0) {
-                        control.Complete();
+                        control.completeBorrowBook(); //Change the method name to 'completeBorrowBook' from "Complete" in BorrowBookControl Class
                         break;
                     }
                     try {

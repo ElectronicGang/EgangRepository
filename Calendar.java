@@ -34,7 +34,7 @@ public class Calendar {
         }
     }
 
-    public synchronized Date Date() {
+    public synchronized Date date() { // previous word was 'Date'
         try {
             calendar.set(java.util.Calendar.HOUR_OF_DAY, 0);
             calendar.set(java.util.Calendar.MINUTE, 0);
