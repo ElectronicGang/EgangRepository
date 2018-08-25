@@ -11,7 +11,7 @@ public class Main {
 	private static SimpleDateFormat DATE_FORMAT; //variable name "SDF" re-named as "DATE_FORMAT"
 	
 	
-	private static String GetMenu() { // Method name "Get_menu()" re-named as "GetMenu()"
+	private static String getMenu() { // Method name "Get_menu()" re-named as "getMenu()"
 		StringBuilder stringBuilder = new StringBuilder(); // Object name "sb" re-named as "stringBuilder"
 		
 		stringBuilder.append("\nLibrary Main Menu\n\n") // Object name "sb" re-named as "stringBuilder"
@@ -50,11 +50,11 @@ public class Main {
 				output(member);
 			}
 			output(" ");
-			for (Book b : LIBRARY.getBooks()) { //variable name "LIB" re-named as "LIBRARY"
-				output(b);
+			for (Book book : LIBRARY.getBooks()) { //variable "b" renamed as "book" and name "LIB" re-named as "LIBRARY"
+				output(book);
 			}
 						
-			MENU = GetMenu(); // Method name "Get_menu()" re-named as "GetMenu()"
+			MENU = getMenu(); // Method name "Get_menu()" re-named as "getMenu()"
 			
 			boolean error = false; // variable name "e" re-named as "error" 
 			
@@ -131,8 +131,8 @@ public class Main {
 
 	private static void listCurrentLoans() {
 		output("");
-		for (Loan loan : LIBRARY.CurrentLoans()) { /* Class name "Loan" re-named as "Loan"
-                    variable name "LIB" re-named as "LIBRARY" */
+		for (Loan loan : LIBRARY.currentLoans()) { /* Class name "Loan" re-named as "Loan"
+                    variable name "LIB" re-named as "LIBRARY" and invoked method name "currentLoans()" renamed as ""currentLoans()*/
 			output(loan + "\n");
 		}		
 	}
@@ -193,7 +193,8 @@ public class Main {
 		String author = input("Enter author: ");
 		String title  = input("Enter title: ");
 		String callNo = input("Enter call number: ");
-		Book book = LIBRARY.Add_book(author, title, callNo); //variable name "LIB" re-named as "LIBRARY"
+		Book book = LIBRARY.addBook(author, title, callNo); /* variable name "LIB" re-named as "LIBRARY"
+                invoked method name "addBook()" renamed as ""addBook()*/
 		output("\n" + book + "\n");
 		
 	}
@@ -205,7 +206,8 @@ public class Main {
 			String firstName  = input("Enter first name: ");
 			String email = input("Enter email: ");
 			int phoneNo = Integer.valueOf(input("Enter phone number: ")).intValue();
-			Member member = LIBRARY.Add_mem(lastName, firstName, email, phoneNo); //variable name "LIB" re-named as "LIBRARY"
+			Member member = LIBRARY.addMember(lastName, firstName, email, phoneNo); /* variable name "LIB" re-named as "LIBRARY" 
+                        invoked method named "Add_mem" re-named as "addMember" */
 			output("\n" + member + "\n");
 			
 		} catch (NumberFormatException exception) { // Variable "e" re-named as "exception" 

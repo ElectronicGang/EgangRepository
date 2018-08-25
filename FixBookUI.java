@@ -1,18 +1,18 @@
 import java.util.Scanner;
 
 
-public class FixBookUi { // Class name "FixBookUI" re-named as "FixBookUi"
+public class FixBookUi {
 
 	public static enum UI_STATE { INITIALISED, READY, FIXING, COMPLETED };
 
 	private FixBookControl control;
-	private Scanner input;
+	private Scanner inputString;// variable "input" re-named as "inputString"
 	private UI_STATE state;
 
 	
 	public FixBookUi(FixBookControl control) {
 		this.control = control;
-		input = new Scanner(System.in);
+		inputString = new Scanner(System.in); // variable "input" re-named as "inputString"
 		state = UI_STATE.INITIALISED;
 		control.setUi(this);
 	}
@@ -24,7 +24,7 @@ public class FixBookUi { // Class name "FixBookUI" re-named as "FixBookUi"
 
 	
 	public void run() {
-		output("Fix Book Use Case UI\n");
+		outputObject("Fix Book Use Case UI\n"); //method "output" re-named as "outputObject"
 		
 		while (true) {
 			
@@ -41,13 +41,13 @@ public class FixBookUi { // Class name "FixBookUI" re-named as "FixBookUi"
                                         control.bookScanned(bookId);
                                     }
                                     catch (NumberFormatException e) {
-					output("Invalid bookId");
+					outputObject("Invalid bookId"); //method "output" re-named as "outputObject"
                                     }
 				}
 				break;		
 				
 			case FIXING:
-				String answer = input("Fix Book? (Y/N) : "); // This String variable name "ans" was re-named as "answer" to make it meaningfull.
+				String answer = input("Fix Book? (Y/N) : "); // This String variable name was "ans" before re-named.
 				boolean fix = false;
 				if (answer.toUpperCase().equals("Y")) {
 					fix = true;
@@ -56,11 +56,11 @@ public class FixBookUi { // Class name "FixBookUI" re-named as "FixBookUi"
 				break;
 								
 			case COMPLETED:
-				output("Fixing process complete");
+				outputObject("Fixing process complete"); //method "output" re-named as "outputObject"
 				return;
 			
 			default:
-				output("Unhandled state");
+				outputObject("Unhandled state"); //method "output" re-named as "outputObject"
 				throw new RuntimeException("FixBookUI : unhandled state :" + state);			
 			
 			}		
@@ -71,17 +71,18 @@ public class FixBookUi { // Class name "FixBookUI" re-named as "FixBookUi"
 	
 	private String input(String prompt) {
 		System.out.print(prompt);
-		return input.nextLine();
+		return inputString.nextLine(); // variable "input" re-named as "inputString"
 	}	
 		
 		
-	private void output(Object object) {
+	private void outputObject(Object object) { //method "output" re-named as "outputObject"
 		System.out.println(object);
 	}
 	
 
-	public void display(Object object) {
-		output(object);
+	public void displayObject(Object object) { //method "display" re-named as "displayObject"
+		outputObject(object); //method "output" re-named as "outputObject"
 	}
-		
+	
+	
 }
