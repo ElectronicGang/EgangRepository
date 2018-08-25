@@ -32,7 +32,7 @@ public class Library implements Serializable {  // change class name from librar
 	private Map<Integer, Member> members; // change object class member to Member
 	private Map<Integer, Loan> loans;  // change object class loan to Loan
 	private Map<Integer, Loan> currentLoans;  // change object class loan to Loan
-	private Map<Integer, book> damagedBooks; // change object type book to Book
+	private Map<Integer, Book> damagedBooks; // change object type book to Book
 	
 
 	private Library() {  // change constucter name from librabry to Library
@@ -71,9 +71,9 @@ public class Library implements Serializable {  // change class name from librar
 		if (libraryObject != null) {  // change self to libraryObject
 			self.loadDate = Calendar.getInstance().Date();
 			try (ObjectOutputStream libraryObjectFile = new ObjectOutputStream(new FileOutputStream(LIBRARY_FILE));) {  // change lof object name to libraryObjectFile
-				libraryObjectFile.writeObject(libraryObject);  // change self to libraryObjectFile
-				libraryObjectFile.flush();  // change self to libraryObjectFile
-				libraryObjectFile.close();  // change self to libraryObjectFile	
+				libraryObjectFile.writeObject(libraryObject);  // change lof to libraryObjectFile
+				libraryObjectFile.flush();  // change lof to libraryObjectFile
+				libraryObjectFile.close();  // change lof to libraryObjectFile	
 			}
 			catch (Exception e) {
 				throw new RuntimeException(e);
@@ -112,7 +112,7 @@ public class Library implements Serializable {  // change class name from librar
 	}
 
 
-	public List<Book> getBooks() { // changed object type from book to Book, change method name from Books to getBooks		
+	public List<Book> getBooks() { // changed object class name from book to Book, change method name from Books to getBooks		
 		return new ArrayList<book>(catalog.values()); 
 	}
 
@@ -176,7 +176,7 @@ public class Library implements Serializable {  // change class name from librar
 	}
 
 	
-	public loan issueLoan(Book book, member member) { // change parameter object type from book to Book	
+	public loan issueLoan(Book book, member member) { // change parameter object class name from book to Book	
 		Date dueDate = Calendar.getInstance().getDueDate(LOAN_PERIOD);
 		loan loan = new loan(getNextLoanId(), book, member, dueDate);  // change method from nextLID to getNextLoanId
 		member.takeOutLoan(loan);
@@ -207,7 +207,7 @@ public class Library implements Serializable {  // change class name from librar
 
 	public void dischargeLoan(loan currentLoan, boolean isDamaged) {
 		member member = currentLoan.Member();
-		Book book  = currentLoan.Book();   // change object type from book to Book	
+		Book book  = currentLoan.Book();   // changed object class name from book to Book	
 		
 		double overDueFine = calculateOverDueFine(currentLoan);
 		member.addFine(overDueFine);	
@@ -230,7 +230,7 @@ public class Library implements Serializable {  // change class name from librar
 	}
 
 
-	public void repairBook(Book currentBook) { // change object type from book to Book	
+	public void repairBook(Book currentBook) { // change object class name from book to Book	
 		if (damagedBooks.containsKey(currentBook.ID())) {
 			currentBook.Repair();
 			damagedBooks.remove(currentBook.ID());
