@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 
-public class FixBookUi {
+public class FixBookUi { // Class name "FixBookUI" re-named as "FixBookUi"
 
 	public static enum UI_STATE { INITIALISED, READY, FIXING, COMPLETED };
 
