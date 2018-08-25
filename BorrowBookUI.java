@@ -31,7 +31,7 @@ public class BorrowBookUi { //class changed to BorrowBookUi from BorrowBookUI
         this.state = state;
     }
 
-    public void run() {
+    public void borrowBook() { //changed the method name run to borrowBook 
         output("Borrow Book Use Case UI\n");
 
         while (true) {
