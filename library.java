@@ -11,7 +11,6 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import ppt.assignment.pkg2.Book;  // import reference of Book class
 
 @SuppressWarnings("serial")
 public class Library implements Serializable {  // change class name from library to Library
@@ -29,10 +28,10 @@ public class Library implements Serializable {  // change class name from librar
 	private int loanId;  //change variable name from LID to loanId
 	private Date loadDate;
 	
-	private Map<Integer, Book> catalog; // change object type book to Book
-	private Map<Integer, member> members;
-	private Map<Integer, loan> loans;
-	private Map<Integer, loan> currentLoans;
+	private Map<Integer, Book> catalog; // change object class book to Book
+	private Map<Integer, Member> members; // change object class member to Member
+	private Map<Integer, Loan> loans;  // change object class loan to Loan
+	private Map<Integer, Loan> currentLoans;  // change object class loan to Loan
 	private Map<Integer, book> damagedBooks; // change object type book to Book
 	
 
@@ -48,7 +47,7 @@ public class Library implements Serializable {  // change class name from librar
 	}
 
 	
-	public static synchronized Library INSTANCE() {	 // chnage method name from library to Library
+	public static synchronized Library INSTANCE() {	 // chnage return type library to Library
 		if (libraryObject == null) {  // change self to libraryObject
 			Path path = Paths.get(LIBRARY_FILE);			
 			if (Files.exists(path)) {	
