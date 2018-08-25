@@ -19,10 +19,10 @@ public class Loan implements Serializable {
 
 	
 	public Loan(int loanId, book book, member member, Date dueDate) {
-		this.ID = loanId;
-		this.B = book;
-		this.M = member;
-		this.D = dueDate;
+		this.loanId = loanId;
+		this.book = book;
+		this.member = member;
+		this.dueDate = dueDate;
 		this.state = LOAN_STATE.CURRENT;
 	}
 
@@ -41,12 +41,12 @@ public class Loan implements Serializable {
 
 	
 	public Integer getId() {
-		return ID;
+		return loanId;
 	}
 
 
 	public Date getDueDate() {
-		return D;
+		return dueDate;
 	}
 	
 	
@@ -66,12 +66,12 @@ public class Loan implements Serializable {
 
 
 	public member member() {
-		return M;
+		return member;
 	}
 
 
 	public book book() {
-		return B;
+		return book;
 	}
 
 
