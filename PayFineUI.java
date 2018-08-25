@@ -24,7 +24,7 @@ public class PayFineUI {
 	}
 
 
-	public void run() {
+	public void payFine() { // method name changed to run to payFine
 		output("Pay Fine Use Case UI\n");
 		
 		while (true) {
@@ -32,13 +32,13 @@ public class PayFineUI {
 			switch (state) {
 			
 			case READY:
-				String memStr = input("Swipe member card (press <enter> to cancel): ");
-				if (memStr.length() == 0) {
+				String memberStrng = input("Swipe member card (press <enter> to cancel): "); //member in string variable changed to a meaningful value
+				if (memberStrng.length() == 0) {
 					control.cancel();
 					break;
 				}
 				try {
-					int memberId = Integer.valueOf(memStr).intValue();
+					int memberId = Integer.valueOf(memberStrng).intValue();
 					control.cardSwiped(memberId);
 				}
 				catch (NumberFormatException e) {
@@ -48,13 +48,13 @@ public class PayFineUI {
 				
 			case PAYING:
 				double amount = 0;
-				String amtStr = input("Enter amount (<Enter> cancels) : ");
-				if (amtStr.length() == 0) {
+				String amountStrng = input("Enter amount (<Enter> cancels) : "); //amount in string variable changed to a meaningful value
+				if (amountStrng.length() == 0) {
 					control.cancel();
 					break;
 				}
 				try {
-					amount = Double.valueOf(amtStr).doubleValue();
+					amount = Double.valueOf(amountStrng).doubleValue();
 				}
 				catch (NumberFormatException e) {}
 				if (amount <= 0) {
