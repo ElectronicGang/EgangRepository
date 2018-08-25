@@ -92,7 +92,7 @@ public class PayFineUI {
 	}	
 			
 
-	public void display(Object object) {
+	public void display(Object object) { //REQUESTING METHOD
 		output(object);
 	}
 
