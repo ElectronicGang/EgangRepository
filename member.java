@@ -5,24 +5,25 @@ import java.util.List;
 import java.util.Map;
 
 @SuppressWarnings("serial")
-public class member implements Serializable {
-
-	private String LN;
-	private String FN;
-	private String EM;
-	private int PN;
-	private int ID;
-	private double FINES;
+public class Member implements Serializable {
+//The class name should start with a Uppercase letter. Therefore it must be corrected as Member
+	private String lastName;
+	private String firstName;
+	private String email;
+	private int phoneNo;
+	private int id;
+	private double fines;
+	//The variable name should be given meaning name
 	
 	private Map<Integer, loan> LNS;
 
 	
 	public member(String lastName, String firstName, String email, int phoneNo, int id) {
-		this.LN = lastName;
-		this.FN = firstName;
-		this.EM = email;
-		this.PN = phoneNo;
-		this.ID = id;
+		this.lastNo = lastName;
+		this.firstName = firstName;
+		this.email = email;
+		this.phoneNo = phoneNo;
+		this.id = id;
 		
 		this.LNS = new HashMap<>();
 	}
