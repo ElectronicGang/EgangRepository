@@ -47,7 +47,7 @@ public class FixBookUi { // Class name "FixBookUI" re-named as "FixBookUi"
 				break;		
 				
 			case FIXING:
-				String answer = input("Fix Book? (Y/N) : "); // This String variable name was "ans" before re-named.
+				String answer = input("Fix Book? (Y/N) : "); // This String variable name "ans" was re-named as "answer" to make it meaningfull.
 				boolean fix = false;
 				if (answer.toUpperCase().equals("Y")) {
 					fix = true;
@@ -83,6 +83,5 @@ public class FixBookUi { // Class name "FixBookUI" re-named as "FixBookUi"
 	public void display(Object object) {
 		output(object);
 	}
-	
-	
+		
 }
