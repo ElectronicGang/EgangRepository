@@ -37,7 +37,7 @@ public class Member implements Serializable {
 		  .append("  Phone: ").append(PN)
 		  .append("\n")
 		  .append(String.format("  Fines Owed :  $%.2f", FINES))
-		  .append("\n");
+		  .append("\n"); 
 		
 		for (loan loan : LNS.values()) {
 			sb.append(loan).append("\n");
