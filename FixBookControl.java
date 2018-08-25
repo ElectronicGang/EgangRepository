@@ -1,11 +1,12 @@
 public class FixBookControl {
 	
-	private FixBookUI ui;
+	private FixBookUi userInterface;/*This object class name "FixBookUI" was renamed as "FixBookUi"
+        and variable name "ui" was re-named as "userInterface".*/
 	private enum CONTROL_STATE { INITIALISED, READY, FIXING };
 	private CONTROL_STATE state;
 	
-	private library library;
-	private book currentBook;
+	private Library library; // This object class name was "library" before it re-named to "Library".
+	private Book currentBook; // This object class name was "book" before it re-named to "Book".
 
 
 	public FixBookControl() {
@@ -14,12 +15,14 @@ public class FixBookControl {
 	}
 	
 	
-	public void setUI(FixBookUI ui) {
+	public void setUi(FixBookUi userInterface) { /*This object class name "FixBookUI" was renamed as "FixBookUi"
+        and variable name "ui" was re-named as "userInterface".*/ 
 		if (!state.equals(CONTROL_STATE.INITIALISED)) {
-			throw new RuntimeException("FixBookControl: cannot call setUI except in INITIALISED state");
+			throw new RuntimeException("FixBookControl: cannot call setUi except in INITIALISED state");
 		}	
-		this.ui = ui;
-		ui.setState(FixBookUI.UI_STATE.READY);
+		this.userInterface = userInterface;
+		userInterface.setState(FixBookUi.UI_STATE.READY);/*This object class name "FixBookUI" was renamed as "FixBookUi"
+        and variable name "ui" was re-named as "userInterface".*/
 		state = CONTROL_STATE.READY;		
 	}
 
@@ -31,15 +34,16 @@ public class FixBookControl {
 		currentBook = library.Book(bookId);
 		
 		if (currentBook == null) {
-			ui.display("Invalid bookId");
+			userInterface.display("Invalid bookId");
 			return;
 		}
-		if (!currentBook.Damaged()) {
-			ui.display("\"Book has not been damaged");
+		if (!currentBook.damaged()) { //method name "Damaged" was re-named as "damaged"
+			userInterface.display("\"Book has not been damaged");
 			return;
 		}
-		ui.display(currentBook.toString());
-		ui.setState(FixBookUI.UI_STATE.FIXING);
+		userInterface.display(currentBook.toString());
+		userInterface.setState(FixBookUi.UI_STATE.FIXING);/*This object class name "FixBookUI" was renamed as "FixBookUi"
+        and variable name "ui" was re-named as "userInterface".*/
 		state = CONTROL_STATE.FIXING;		
 	}
 
@@ -52,7 +56,8 @@ public class FixBookControl {
 			library.repairBook(currentBook);
 		}
 		currentBook = null;
-		ui.setState(FixBookUI.UI_STATE.READY);
+		userInterface.setState(FixBookUi.UI_STATE.READY);/*This object class name "FixBookUI" was renamed as "FixBookUi"
+        and variable name "ui" was re-named as "userInterface".*/
 		state = CONTROL_STATE.READY;		
 	}
 
@@ -61,12 +66,8 @@ public class FixBookControl {
 		if (!state.equals(CONTROL_STATE.READY)) {
 			throw new RuntimeException("FixBookControl: cannot call scanningComplete except in READY state");
 		}	
-		ui.setState(FixBookUI.UI_STATE.COMPLETED);		
+		userInterface.setState(FixBookUi.UI_STATE.COMPLETED);/*This object class name "FixBookUI" was renamed as "FixBookUi"
+        and variable name "ui" was re-named as "userInterface".*/
 	}
-
-
-
-
-
-
+        
 }
