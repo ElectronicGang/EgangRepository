@@ -5,8 +5,8 @@ public class FixBookControl {
 	private enum CONTROL_STATE { INITIALISED, READY, FIXING };
 	private CONTROL_STATE state;
 	
-	private Library library; // This object class name was "library" before it re-named to "Library".
-	private Book currentBook; // This object class name was "book" before it re-named to "Book".
+	private Library library; // This object class name was "library" before it re-named.
+	private Book currentBook; // This object class name was "book" before it re-named.
 
 
 	public FixBookControl() {
@@ -34,14 +34,14 @@ public class FixBookControl {
 		currentBook = library.Book(bookId);
 		
 		if (currentBook == null) {
-			userInterface.display("Invalid bookId");
+			userInterface.displayObject("Invalid bookId");//method "display" re-named as "displayObject"
 			return;
 		}
-		if (!currentBook.damaged()) { //method name "Damaged" was re-named as "damaged"
-			userInterface.display("\"Book has not been damaged");
+		if (!currentBook.damaged()) { //method name "damaged" was re-named as "damaged"
+			userInterface.displayObject("\"Book has not been damaged");//method "display" re-named as "displayObject"
 			return;
 		}
-		userInterface.display(currentBook.toString());
+		userInterface.displayObject(currentBook.toString()); //method "display" re-named as "displayObject"
 		userInterface.setState(FixBookUi.UI_STATE.FIXING);/*This object class name "FixBookUI" was renamed as "FixBookUi"
         and variable name "ui" was re-named as "userInterface".*/
 		state = CONTROL_STATE.FIXING;		
