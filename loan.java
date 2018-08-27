@@ -3,22 +3,26 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @SuppressWarnings("serial")
-public class loan implements Serializable {
-	
+public class Loan implements Serializable {
+	// The class name should start with a Uppercase letter. Therefore it must be corrected as Loan
 	public static enum LOAN_STATE { CURRENT, OVER_DUE, DISCHARGED };
 	
-	private int ID;
-	private book B;
-	private member M;
-	private Date D;
+	private int loanId;
+	//It should start with a lowercase letter.Therefore it must be corrected as loanID.
+	private Book book;
+	// The variable name should be given meaning name
+	private Member member;
+	// The variable name should be given meaning name
+	private Date dueDate;
+	// The variable name should be given meaning name
 	private LOAN_STATE state;
 
 	
-	public loan(int loanId, book book, member member, Date dueDate) {
-		this.ID = loanId;
-		this.B = book;
-		this.M = member;
-		this.D = dueDate;
+	public Loan(int loanId, book book, member member, Date dueDate) {
+		this.loanId = loanId;
+		this.book = book;
+		this.member = member;
+		this.dueDate = dueDate;
 		this.state = LOAN_STATE.CURRENT;
 	}
 
@@ -37,12 +41,12 @@ public class loan implements Serializable {
 
 	
 	public Integer getId() {
-		return ID;
+		return loanId;
 	}
 
 
 	public Date getDueDate() {
-		return D;
+		return dueDate;
 	}
 	
 	
@@ -61,17 +65,17 @@ public class loan implements Serializable {
 	}
 
 
-	public member Member() {
-		return M;
+	public member member() {
+		return member;
 	}
 
 
-	public book Book() {
-		return B;
+	public book book() {
+		return book;
 	}
 
 
-	public void Loan() {
+	public void loan() {
 		state = LOAN_STATE.DISCHARGED;		
 	}
 
